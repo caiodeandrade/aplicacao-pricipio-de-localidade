@@ -1,2 +1,5 @@
 # aplicacao-pricipio-de-localidade
-Projeto pessoal aplicando os conceitos de principio de localidade aprendidos em aula na faculdade
+Projeto pessoal aplicando os conceitos de principio de localidade aprendidos em aula na faculdade.
+
+  O código apresenta duas maneiras distintas de se fazer uma multiplicação de matrizes, o primeiro segue o modelo convencional(ijk) e o segundo um modelo onde o principio de localidade é aplicado(ikj). Ao análisarmos o primeiro modelo percebe-se que a segunda matriz está sendo acessada olhando coluna a coluna, porém a mesma está armazenada linha a linha na memória. Sendo assim, quando um elemento for buscado no cache e der miss um bloco contendo os próximos elementos será enviado para o cache. Como o acesso está por coluna a chance do próximo elemento buscado não estar na cache e dar miss é alto. Consequentemente o número de hits na cache será mais baixo e número de acessos a memória principal será mais alto, perdendo desempenho. 
+  No segundo modelo com a inversão dos loops "i" e "k" o acesso da segunda matriz se torna linha a linha, assim como seu armazenamento em memória. Seguindo a mesma lógica o número de hits será mais alto assim sendo mais performático. 
